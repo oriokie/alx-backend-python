@@ -5,6 +5,7 @@ as argument and returns their sum as a float.
 """
 from typing import List
 
+
 def sum_list(input_list: List[float]) -> float:
     """
     Function takes floats as arg and returns the sum as float

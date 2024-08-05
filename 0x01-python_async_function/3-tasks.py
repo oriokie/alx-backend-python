@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-'''
-Test file for printing the correct output of the wait_n coroutine
-'''
+""" Takes int arg, returns random delay """
+
 import asyncio
+import random
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-wait_n = __import__('1-concurrent_coroutines').wait_n
-
-print(asyncio.run(wait_n(5, 5)))
-print(asyncio.run(wait_n(10, 7)))
-print(asyncio.run(wait_n(10, 0)))
+def task_wait_random(max_delay: int = 10) -> asyncio.Task:
+    """ Waits for random delay then returns asyncio.Task object """
+    return asyncio.create_task(wait_random(max_delay))
